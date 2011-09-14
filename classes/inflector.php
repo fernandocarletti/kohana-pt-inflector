@@ -55,7 +55,7 @@ class Inflector extends Kohana_Inflector {
 		if (empty(Inflector::$irregular))
 		{
 			// Cache irregular words
-			Inflector::$irregular = Kohana::config('inflector')->irregular;
+			Inflector::$irregular = Kohana::$config->load('inflector')->irregular;
 		}
 
 		if ($irregular = array_search($str, Inflector::$irregular))
@@ -132,7 +132,7 @@ class Inflector extends Kohana_Inflector {
 		if (empty(Inflector::$irregular))
 		{
 			// Cache irregular words
-			Inflector::$irregular = Kohana::config('inflector')->irregular;
+			Inflector::$irregular = Kohana::$config->load('inflector')->irregular;
 		}
 
 		if (isset(Inflector::$irregular[$str]))
